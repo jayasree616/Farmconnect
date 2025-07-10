@@ -1,0 +1,436 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0fdf4;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+h1, h2 {
+  color: #2e7d32;
+}
+
+header {
+  text-align: center;
+  padding: 30px 10px;
+  background: #a5d6a7;
+  border-bottom: 2px solid #81c784;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 1.1em;
+}
+
+main {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+/* Form styles */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, button, select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #2e7d32;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1b5e20;
+}
+
+#filterBar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.job-card {
+  background: white;
+  border-left: 5px solid #2e7d32;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+/* Delete button style */
+.deleteBtn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: #b71c1c;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  color: #666;
+  border-top: 1px solid #ccc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #filterBar {
+    flex-direction: column;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  input, button, select {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+}
+/* Job Card Styling */
+.job-card {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  line-height: 1.6;
+  transition: transform 0.2s;
+}
+
+.job-card:hover {
+  transform: scale(1.01);
+}
+
+.job-card strong {
+  font-size: 17px;
+  color: #2a7a2f;
+}
+
+.job-card button.deleteBtn {
+  margin-top: 8px;
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.job-card button.deleteBtn:hover {
+  background-color: #e03e3e;
+}
+/* Base Font and Layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling */
+header {
+  background-color: #2a7a2f;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+#userInfo, #userRoleDisplay {
+  margin-right: 10px;
+}
+
+#logoutBtn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#logoutBtn:hover {
+  background-color: #d32f2f;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #2a7a2f;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* Utility Classes (optional) */
+.text-center {
+  text-align: center;
+}
+
+/* Job Cards Container */
+#jobsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* Individual Job Card */
+.job-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-left: 6px solid #4CAF50;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-card strong {
+  font-size: 1.1rem;
+  color: #2a7a2f;
+}
+
+/* Delete Button Inside Card */
+.job-card button.deleteBtn {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.job-card button.deleteBtn:hover {
+  background-color: #c62828;
+}
+/* Mobile Optimization */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  #userInfo,
+  #userRoleDisplay {
+    font-size: 12px;
+  }
+
+  #filterBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #form-section,
+  #jobs-section {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  #jobForm input,
+  #jobForm button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .job-card {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+.job-card {
+  background-color: #fefefe;
+  border: 1px solid #dcdcdc;
+  border-left: 4px solid #4CAF50;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.job-card:hover {
+  transform: scale(1.01);
+  border-left-color: #388e3c;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.job-card strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.job-card button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.job-card button:hover {
+  background-color: #e60000;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin: 0 0 14px;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 22px;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  color: #34495e;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.modal-content input:focus {
+  border-color: #3498db;
+}
+
+.modal-content button {
+  margin-top: 18px;
+  width: 100%;
+  background: linear-gradient(135deg, #16a085, #27ae60);
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.modal-content button:hover {
+  background: linear-gradient(135deg, #148f77, #1e8449);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.closeBtn:hover {
+  color: #2c3e50;
+}
+.job-card button.editBtn {
+  background-color: #e53935; /* Blue color for Edit */
+  color: white;
+  border: none;
+  padding: 6px 10px; /* Same as deleteBtn */
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.job-card button.editBtn:hover {
+  background-color: #c01515;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
