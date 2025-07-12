@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const token = localStorage.getItem("token");
 
             try {
-              const res = await fetch(`http://localhost:5000/api/jobs/${jobId}/apply`, {
+              const res = await fetch(`http://farmconnect-server.onrender.com/api/jobs/${jobId}/apply`, {
                 method: 'POST',
                 headers: {
                   'Authorization': 'Bearer ' + token
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const token = localStorage.getItem("token");
 
           try {
-            const res = await fetch(`http://localhost:5000/api/jobs/${jobId}/accept`, {
+            const res = await fetch(`http://farmconnect-server.onrender.com/api/jobs/${jobId}/accept`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       try {
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        const res = await fetch("http://farmconnect-server.onrender.com/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password })
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const role = document.getElementById("signupRole").value;
       const contact = document.getElementById("signupContact").value;
       try {
-        const res = await fetch("http://localhost:5000/api/auth/signup", {
+        const res = await fetch("http://farmconnect-server.onrender.com/api/auth/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password, role, contact })
