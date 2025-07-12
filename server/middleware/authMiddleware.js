@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const SECRET_KEY = 'farmconnect_secret';
+require('dotenv').config(); // Load env variables
+const SECRET_KEY = process.env.JWT_SECRET;
 
 console.log("🔐 Middleware using JWT secret:", SECRET_KEY);
 

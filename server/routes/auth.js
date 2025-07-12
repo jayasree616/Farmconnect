@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-const JWT_SECRET = "MySuperSecretKey123!@#";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 console.log("🔐 Auth route signing with secret:", JWT_SECRET);
 
