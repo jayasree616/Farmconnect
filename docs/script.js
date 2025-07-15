@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const jobsList = document.getElementById('jobsList');
   const locationFilter = document.getElementById('locationFilter');
   const workTypeFilter = document.getElementById('workTypeFilter');
-  const API_URL = 'http://localhost:5000/api/jobs';
+  const API_URL = 'https://farmconnect-server.onrender.com/api/jobs';
 
   function updateRoleBasedUI() {
     const token = localStorage.getItem("token");
@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("userRole", data.user.role);
           localStorage.setItem("userEmail", data.user.email);
           document.getElementById("loginMsg").textContent = "✅ Login successful!";
-          window.location.href = "index.html";
+          window.location.href = "main.html";
           updateAuthUI();
           updateRoleBasedUI();
         } else {
