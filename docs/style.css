@@ -263,7 +263,16 @@ footer {
 }
 
 .job-card button.deleteBtn:hover {
-  background-color: #c62828;
+  #logoutBtn {
+    display: block;
+    width: 100%;
+    margin: 12px auto 0;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #c62828;
+    border-radius: 8px;
+  }
 }
 /* Mobile Optimization */
 @media (max-width: 600px) {
