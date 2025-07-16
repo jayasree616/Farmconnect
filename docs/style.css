@@ -183,10 +183,10 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.8rem;
-  color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  font-weight: 800;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   letter-spacing: 1px;
 }
 
