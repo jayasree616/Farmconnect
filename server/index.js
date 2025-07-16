@@ -13,7 +13,7 @@ const authRoutes = require('./routes/auth');
 const app = express();
 
 app.use(cors({
-  origin: 'https://jayasree616.github.io',
+  origin: ['https://jayasree616.github.io/FarmConnect'],
   credentials: true
 }));
 app.use(express.json());
