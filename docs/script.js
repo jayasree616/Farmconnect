@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           jobsList.appendChild(jobCard);
         });
+        if (userRole === "farmer"){
         let editingJobId = null;
             document.querySelectorAll('.editBtn').forEach(button => {
             button.addEventListener('click', async () => {
@@ -172,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
               alert("❌ Server error while updating.");
             }
           });
-
+        }
 
         document.querySelectorAll('.deleteBtn').forEach(button => {
           button.addEventListener('click', async () => {
