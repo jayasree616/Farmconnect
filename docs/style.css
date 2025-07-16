@@ -184,7 +184,7 @@ header {
 header h1 {
   margin: 0;
   font-size: 1.8rem;
-  color: #2daa2f;
+  color: #02ba05;
   font-weight: 900;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   letter-spacing: 1px;
@@ -263,19 +263,18 @@ footer {
 }
 
 .job-card button.deleteBtn:hover {
-  #logoutBtn {
-    display: block;
-    width: 100%;
-    margin: 12px auto 0;
-    text-align: center;
-    font-size: 16px;
-    padding: 10px;
-    background-color: #c62828;
-    border-radius: 8px;
-  }
+  background-color: #c62828;
 }
 /* Mobile Optimization */
 @media (max-width: 600px) {
+  #logoutBtn {
+  background-color: #c62828;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
   header h1 {
     font-size: 20px;
   }
