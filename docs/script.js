@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const protectedPages = ['dashboard.html'];
+  const currentPage = location.pathname.split('/').pop();
+
+  const token = localStorage.getItem("token");
+  if (!token && protectedPages.includes(currentPage)) {
+    alert("🚫 You must be logged in to access this page.");
+    window.location.href = "login.html";
+    return;
+  }
   const form = document.getElementById('jobForm');
   const formSection = document.getElementById('jobFormSection');
   const jobsList = document.getElementById('jobsList');
@@ -201,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const token = localStorage.getItem("token");
 
             try {
-              const res = await fetch(`http://farmconnect-server.onrender.com/api/jobs/${jobId}/apply`, {
+              const res = await fetch(`https://farmconnect-server.onrender.com/api/jobs/${jobId}/apply`, {
                 method: 'POST',
                 headers: {
                   'Authorization': 'Bearer ' + token
@@ -228,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const token = localStorage.getItem("token");
 
           try {
-            const res = await fetch(`http://farmconnect-server.onrender.com/api/jobs/${jobId}/accept`, {
+            const res = await fetch(`https://farmconnect-server.onrender.com/api/jobs/${jobId}/accept`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -327,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       try {
-        const res = await fetch("http://farmconnect-server.onrender.com/api/auth/login", {
+        const res = await fetch("https://farmconnect-server.onrender.com/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password })
@@ -338,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("userRole", data.user.role);
           localStorage.setItem("userEmail", data.user.email);
           document.getElementById("loginMsg").textContent = "✅ Login successful!";
-          window.location.href = "main.html";
+          window.location.href = "dashboard.html";
           updateAuthUI();
           updateRoleBasedUI();
         } else {
@@ -360,7 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const role = document.getElementById("signupRole").value;
       const contact = document.getElementById("signupContact").value;
       try {
-        const res = await fetch("http://farmconnect-server.onrender.com/api/auth/signup", {
+        const res = await fetch("https://farmconnect-server.onrender.com/api/auth/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password, role, contact })
