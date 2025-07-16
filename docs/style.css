@@ -184,7 +184,7 @@ header {
 header h1 {
   margin: 0;
   font-size: 1.8rem;
-  color: #0f720c;
+  color: white;
   font-weight: 900;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   letter-spacing: 1px;
@@ -268,8 +268,8 @@ footer {
 /* Mobile Optimization */
 @media (max-width: 600px) {
   #logoutBtn {
-    float: left;
-    margin-left: 0;
+    float: right;
+    margin-right: 0;
     margin-top: 10px;
     display: inline-block;
     width: auto;
