@@ -441,6 +441,24 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Role display error:", err);
     }
   }
+  document.addEventListener('DOMContentLoaded', () => {
+  const profileIcon = document.getElementById('profileIcon');
+  const logoutDropdown = document.getElementById('logoutDropdown');
+
+  if (profileIcon) {
+    profileIcon.addEventListener('click', () => {
+      logoutDropdown.style.display = logoutDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+
+  // Optional: hide when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('profileMenu').contains(e.target)) {
+      logoutDropdown.style.display = 'none';
+    }
+  });
+});
 
   updateRoleBasedUI();
 });
+
