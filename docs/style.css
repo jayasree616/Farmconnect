@@ -268,16 +268,21 @@ footer {
 /* Mobile Optimization */
 @media (max-width: 600px) {
   #logoutBtn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 999;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
     background-color: #f44336;
     color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    border-radius: 30px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border: none;
+    border-radius: 6px;
+    z-index: 1000;
+  }
+
+  .user-info {
+    margin-top: 40px; /* Push content below the logout button */
+    padding-right: 60px; /* Avoid text colliding with logout */
   }
 }
 
