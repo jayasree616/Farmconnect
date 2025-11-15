@@ -37,15 +37,11 @@ Frontend Hosting	GitHub Pages
 Backend Hosting	Render
 Version Control	Git & GitHub
 
-
-🏗️ System Architecture
-┌────────────┐     HTTP/JSON     ┌──────────────┐
-│  Frontend  │  <--------------> │   Backend     │
-│ HTML/JS/CSS│                   │ Node + Express│
-└─────┬──────┘                   └──────┬───────┘
-      │                                 │
-      │  REST API                        │
-      ▼                                 ▼
- ┌──────────────┐             ┌────────────────────┐
- │ Job Handling │             │ MongoDB Atlas (DB)  │
- └──────────────┘             └────────────────────┘
+## 📁 Project Structure
+docs/
+│── index.html
+│── signup.html
+│── login.html
+│── dashboard.html
+│── style.css
+│── script.js
