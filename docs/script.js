@@ -362,31 +362,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const signupForm = document.getElementById("signupForm");
-  if (signupForm) {
-    signupForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("signupEmail").value;
-      const password = document.getElementById("signupPassword").value;
-      const role = document.getElementById("signupRole").value;
-      const contact = document.getElementById("signupContact").value;
-      try {
-        const res = await fetch("https://farmconnect-server.onrender.com/api/auth/signup", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password, role, contact })
-        });
-        const data = await res.json();
-        if (res.ok) {
-          document.getElementById("signupMsg").textContent = "✅ Signup successful. You can now log in.";
-        } else {
-          document.getElementById("signupMsg").textContent = "❌ " + (data.error || "Signup failed.");
-        }
-      } catch (err) {
-        console.error("Signup error:", err);
-        document.getElementById("signupMsg").textContent = "❌ Server error. Try again.";
+if (signupForm) {
+  signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById("signupName").value; // Added name field
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+    const role = document.getElementById("signupRole").value;
+    const phone = document.getElementById("signupContact").value; // renamed from contact -> phone
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, role, phone }) // include name & phone
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        document.getElementById("signupMsg").textContent = "✅ Signup successful. You can now log in.";
+        signupForm.reset();
+      } else {
+        document.getElementById("signupMsg").textContent = "❌ " + (data.error || "Signup failed.");
       }
-    });
-  }
+    } catch (err) {
+      console.error("Signup error:", err);
+      document.getElementById("signupMsg").textContent = "❌ Server error. Try again.";
+    }
+  });
+}
+
 
   const logoutBtn = document.getElementById("logoutBtn");
 

@@ -7,11 +7,9 @@ const User = require("../models/User");
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-console.log("🔐 Auth route signing with secret:", JWT_SECRET);
-
 // Signup Route
 router.post("/signup", async (req, res) => {
-  const { email, password, role, contact } = req.body;
+  const { name, email, password, role, phone } = req.body; // use 'phone' instead of 'contact'
 
   try {
     const existingUser = await User.findOne({ email });
@@ -22,10 +20,11 @@ router.post("/signup", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({
+      name,
       email,
       password: hashedPassword,
       role,
-      contact
+      phone
     });
 
     await newUser.save();
@@ -51,9 +50,6 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ error: "Invalid credentials" });
     }
 
-    console.log("🔐 Signing token with:", JWT_SECRET);
-    console.log("Logged in user:", user.email, "Role:", user.role);
-
     const token = jwt.sign(
       { email: user.email, role: user.role },
       JWT_SECRET
@@ -62,9 +58,10 @@ router.post("/login", async (req, res) => {
     res.json({
       token,
       user: {
+        name: user.name,
         email: user.email,
         role: user.role,
-        contact: user.contact
+        phone: user.phone
       }
     });
   } catch (error) {
