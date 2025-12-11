@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background:url("farm1.webp") hsl(216, 20%, 95%);
+  background: url("images/bg.jpg")
   display: flex;
   justify-content: center;
   align-items: center;
